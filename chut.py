@@ -2,8 +2,8 @@ import asyncio
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 
-TELEGRAM_BOT_TOKEN = 'your bot token 🖕'
-ADMIN_USER_ID = 1234567890
+TELEGRAM_BOT_TOKEN = '7737082462:AAEsNB6fmfHSdp2nGLm5ajFAmlaxnqOEE2c'
+ADMIN_USER_ID = 6379461617
 USERS_FILE = 'users.txt'
 attack_in_progress = False
 
@@ -23,22 +23,22 @@ users = load_users()
 async def start(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     message = (
-        "*🔥 Welcome to GODxCHEATS DDOS Bot! 🔥*\n"
+        "*🔥 Welcome to BANKAI MODZ DDOS Bot! 🔥*\n"
         "*🚀 The ultimate tool to test your server's resilience against DDOS attacks.*\n\n"
         "*✨ Commands Available:*\n"
         "*➤ /approve <user_id>  ➔ Approve a user for DDOS attack usage (Admin Only) 👑*\n"
         "*➤ /remove <user_id>  ➔ Remove a user from DDOS attack usage (Admin Only) ⚠️*\n"
         "*➤ /attack <ip> <port> <time> ➔ Launch a DDOS attack (Approved Users Only) 💥*\n"
         "*➤ /help ➔ Display detailed usage instructions for this bot 🧑‍💻*\n\n"
-        "*💬 Owner: @GODxAloneboy*\n"
-        "*📢 Channel: [GODxCHEATS Channel](https://t.me/+03wLVBPurPk2NWRl)*"
+        "*💬 Owner: @Bankaixmodz*\n"
+        "*📢 Channel: [BANKAI MODZ Channel](https://t.me/+1NA5s81EO5diODFl)*"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
 
 async def help_command(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
     message = (
-        "*❓ How to Use the GODxCHEATS DDOS Bot?*\n\n"
+        "*❓ How to Use the BANKAI MODZ DDOS Bot?*\n\n"
         "*🔑 Commands:*\n\n"
         "*➤ /approve <user_id>* ➔ Approve a user for using the attack functionality (Admin Only) 👑\n"
         "*➤ /remove <user_id>* ➔ Remove a user from attack usage (Admin Only) ⚠️\n"
@@ -48,8 +48,8 @@ async def help_command(update: Update, context: CallbackContext):
         "*1. Only approved users can launch attacks.*\n"
         "*2. Use responsibly and with permission, DDoS attacks are illegal without consent.*\n"
         "*3. Contact the bot owner @GODxAloneBOY for assistance or clarifications.*\n\n"
-        "*⚡ Owner: @GODxAloneboy*\n"
-        "*📢 Channel: [GODxCHEATS Channel](https://t.me/+03wLVBPurPk2NWRl)*"
+        "*⚡ Owner: @Bankaixmodz*\n"
+        "*📢 Channel: [BANKAI MODZ Channel](https://t.me/+1NA5s81EO5diODFl)*"
     )
     await context.bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
 
@@ -58,7 +58,7 @@ async def approve(update: Update, context: CallbackContext):
     args = context.args
 
     if chat_id != ADMIN_USER_ID:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need to get permission to use this command. Contact @GODxAloneBOY.*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need to get permission to use this command. Contact @Bankaixmodz.*", parse_mode='Markdown')
         return
 
     if len(args) != 1:
@@ -75,7 +75,7 @@ async def remove(update: Update, context: CallbackContext):
     args = context.args
 
     if chat_id != ADMIN_USER_ID:
-        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need to get permission to use this command. Contact @GODxAloneBOY.*", parse_mode='Markdown')
+        await context.bot.send_message(chat_id=chat_id, text="*⚠️ You need to get permission to use this command. Contact @Bankaixmodz.*", parse_mode='Markdown')
         return
 
     if len(args) != 1:
@@ -115,7 +115,7 @@ async def run_attack(chat_id, ip, port, time, context):
             "*⚡ Port: {port}*\n"
             "*⚡ Duration: {time} seconds*\n"
             "*⚡ The attack has been successfully finished and the target has been impacted! 💥*\n"
-            "*🔥 Owner @GODxAloneBOY*\n"
+            "*🔥 Owner @Bankaixmodz*\n"
             "*♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️*"
         ).format(ip=ip, port=port, time=time), parse_mode='Markdown')
 
@@ -140,7 +140,7 @@ async def attack(update: Update, context: CallbackContext):
         f"*⭐ Target IP: {ip}*\n"
         f"*⭐ Target Port: {port}*\n"
         f"*⭐ Attack Duration: {time} seconds*\n"
-        f"*🔥 Owner @GODxAloneBOY*\n"
+        f"*🔥 Owner @Bankaixmodz*\n"
         f"*♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️♥️*"
     ), parse_mode='Markdown')
 
